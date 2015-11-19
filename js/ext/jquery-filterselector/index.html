@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Filter-Selector</title>
+		<link href="jquery.filterselector.css" rel="stylesheet" />
+		<script src="jquery-1.4.2.min.js"></script>
+		<script src="jquery.filterselector.js?v=2121"></script>
+		
+		<style tepe="text/style">
+			body{font: 12px Helvetica,arial,sans-serif;}
+		</style>
+		
+        <script type="text/javascript">
+		$(function(){			
+			$("select[name=example-one]").filterSelector({
+				//header: false,
+				displaySelectedText: true,
+				//multiple: false,
+				filter: true,
+				width: '100%',
+				groupSelected: true,				
+				beforeopen: function(){
+					//todo	
+				},
+				beforeclose: function(){
+					//todo
+				},
+				change: function(){
+					//alert("chnage1: " + $(this).getSelectedValue())
+				}
+			});						
+			
+			$("select[name=example-two]").filterSelector({
+				width: 150,
+				//height: 100,
+				multiple: false,
+				//filter: true,
+				header: 'Filter selector', // false to hide
+				//selectedList: 3
+				//groupSelected: true,
+				displaySelectedText: true
+			});
+			
+			//设置选项后，如果该选择下拉框开启了filter功能，在第一次点击按钮显示菜单，然后再点击输入框时，获得的焦点位置不对（未知原因）。
+			$('select:first').setSelectedOptions('option1,option3,option4');
+			//alert($('select:first').getSelectedText());
+			
+			$('select:last').disableOptions("option1", true).setSelectedOptions("option5,option6");
+			//alert($('select:last').getSelectedText());
+			//$('select:last').disableSelector()
+			//$('select:first').append("<option value='aaa'>aaa</option>").refreshSelector()
+
+
+			var selectedValues = '';
+
+			$('<select name="example-thr" multiple="multiple"/>')
+				.append(function(){
+					var options = '';
+					for (var i = 0; i < 1000; i++) {
+						selectedValues += i + ",";
+						options += '<option value="' + i + '">option' + i + '</option>'
+					};
+					return options
+				})
+				.appendTo("body").filterSelector({
+					//header: false,
+					displaySelectedText: true,
+					//multiple: false,
+					filter: true,
+					width: '100%',
+					groupSelected: true
+				}).setSelectedOptions(selectedValues)	
+
+		});
+		</script>
+	</head>
+	<body>
+    	<h3>Filter-Selector</h3>
+		
+		<h3>One</h3>
+		<p>
+			<select title="Basic example one" name="example-one">
+				<option value="option1">Antonio Porchia</option>
+				<option value="option2">Arturo Andres Roig</option>
+				<option value="option3" disabled="disabled">Felipe Pigna</option>
+				<option value="option4">Gustavo Nielsen</option>
+				<option value="option5">Hector German</option>
+				<option value="option6">Juan Carlos Portantiero</option>
+				<option value="option7">Juan L. Ortiz</option>
+				<option value="option8">Manuel Mujica Lainez</option>
+				<option value="option9">Manuel Puig</option>
+				<option value="option10">Olga Orozco</option>
+				<option value="option11">Ricardo Piglia</option>
+				<option value="option12">Silvina Ocampo</option>
+			</select>
+		</p>
+
+		<h3>Two</h3>
+		<p>
+			<select title="Basic example two" name="example-two">			
+				<option value="option1">BJ北京</option>
+				<option value="option2">SH上海</option>
+				<option value="option3" disabled="disabled">TJ天津</option>
+				<option value="option4">HN海南</option>			
+				<option value="option5" selected="selected">YN云南</option>
+				<option value="option6">GD广东</option>
+				<option value="option7">GZ广州</option>
+				<option value="option8">SZ深圳</option>			
+			</select>
+		</p>
+    </body>
+</html>

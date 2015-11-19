@@ -1,0 +1,209 @@
+
+{
+	"code": "0",
+	"msg": "",
+	"data": {
+		"total": 2,
+		"rows": [{
+			"id": 1,
+			"category": 2,
+			"type": 1,
+			"name": "women t-shirt",
+			"des": "商品描述",
+			"price": 59.05,
+			"customTextPrice": 5.00,
+			"specifications":[{"id": 1, "name": "size", "values": ["S", "M", "L", "XL"]}],
+			"directions": [{
+				"id": 1,
+				"type": 1, 
+				"des": "正面",
+				"printingArea": {"x": 130, "y": 90, "width": 138, "height": 228},
+				"blocks": [{
+					"id": 1,
+					"orderNo": 1,
+					"groupId": 1,
+					"colors": [{
+						"color": "ffffff",
+						"des": "白色"
+					}, {
+						"color": "743B80",
+						"des": "紫色"
+					}]
+				}]
+			}, {
+				"id": 2,
+				"type": 2, 
+				"des": "反面",
+				"printingArea": {"x": 130, "y": 90, "width": 138, "height": 228},
+				"blocks": [{
+					"id": 2,
+					"orderNo": 1,
+					"groupId": 1,
+					"colors": [{
+						"color": "ffffff",
+						"des": "白色"
+					}, {
+						"color": "743B80",
+						"des": "紫色"
+					}]
+				}]
+			}, {
+				"id": 3,
+				"type": 3, 
+				"des": "左侧面",
+				"printingArea": {"x": 114, "y": 200, "width": 108, "height": 150},
+				"blocks": [{
+					"id": 3,
+					"orderNo": 1,
+					"groupId": 1,
+					"colors": [{
+						"color": "ffffff",
+						"des": "白色"
+					}, {
+						"color": "743B80",
+						"des": "紫色"
+					}]
+				}]
+			}, {
+				"id": 4,
+				"type": 4, 
+				"des": "右侧面",
+				"printingArea": {"x": 176, "y": 200, "width": 108, "height": 150},
+				"blocks": [{
+					"id": 4,
+					"orderNo": 1,
+					"groupId": 1,
+					"colors": [{
+						"color": "ffffff",
+						"des": "白色"
+					}, {
+						"color": "743B80",
+						"des": "紫色"
+					}]
+				}]
+			}]
+		}, {
+			"id": 2,
+			"category": 1,
+			"type": 2,
+			"name": "men t-shirt",
+			"des": "商品描述",
+			"price": 79.00,
+			"customTextPrice": 4.20,
+			"specifications":[{"id": 2, "name": "size", "values": ["S", "M", "L"]}],
+			"directions": [{
+				"id": 5,
+				"type": 1, 
+				"des": "正面",
+				"printingArea": {"x": 126, "y": 90, "width": 138, "height": 228},
+				"blocks": [{
+					"id": 5,
+					"orderNo": 1,
+					"groupId": 1,
+					"colors": [{
+						"color": "aeaeae",
+						"des": "灰色"
+					}, {
+						"color": "ff0000",
+						"des": "红色"
+					}]
+				}, {
+					"id": 6,
+					"orderNo": 2,
+					"groupId": 2,
+					"colors": [{
+						"color": "aeaeae",
+						"des": "灰色"
+					}, {
+						"color": "ff0000",
+						"des": "红色"
+					}]
+				}]
+			}, {
+				"id": 6,
+				"type": 2, 
+				"des": "反面",
+				"printingArea": {"x": 126, "y": 90, "width": 138, "height": 228},
+				"blocks": [{
+					"id": 7,
+					"orderNo": 1,
+					"groupId": 1,
+					"colors": [{
+						"color": "aeaeae",
+						"des": "灰色"
+					}, {
+						"color": "ff0000",
+						"des": "红色"
+					}]
+				}, {
+					"id": 8,
+					"orderNo": 2,
+					"groupId": 2,
+					"colors": [{
+						"color": "aeaeae",
+						"des": "灰色"
+					}, {
+						"color": "ff0000",
+						"des": "红色"
+					}]
+				}]
+			}, {
+				"id": 7,
+				"type": 3, 
+				"des": "左侧面",
+				"printingArea": {"x": 145, "y": 186, "width": 108, "height": 150},
+				"blocks": [{
+					"id": 9,
+					"orderNo": 1,
+					"groupId": 1,
+					"colors": [{
+						"color": "aeaeae",
+						"des": "灰色"
+					}, {
+						"color": "ff0000",
+						"des": "红色"
+					}]
+				}, {
+					"id": 10,
+					"orderNo": 2,
+					"groupId": 2,
+					"colors": [{
+						"color": "aeaeae",
+						"des": "灰色"
+					}, {
+						"color": "ff0000",
+						"des": "红色"
+					}]
+				}]
+			}, {
+				"id": 8,
+				"type": 4, 
+				"des": "右侧面",
+				"printingArea": {"x": 146, "y": 186, "width": 108, "height": 150},
+				"blocks": [{
+					"id": 11,
+					"orderNo": 1,
+					"groupId": 1,
+					"colors": [{
+						"color": "aeaeae",
+						"des": "灰色"
+					}, {
+						"color": "ff0000",
+						"des": "红色"
+					}]
+				}, {
+					"id": 12,
+					"orderNo": 2,
+					"groupId": 2,
+					"colors": [{
+						"color": "aeaeae",
+						"des": "灰色"
+					}, {
+						"color": "ff0000",
+						"des": "红色"
+					}]
+				}]
+			}]
+		}]
+	}
+}

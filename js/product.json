@@ -1,0 +1,127 @@
+{
+	"code": "0",
+	"msg": "",
+	"data": {
+		"id": 2,
+		"category": 1,
+		"type": 2,
+		"name": "men t-shirt",
+		"des": "商品描述",
+		"price": 79.00,
+		"customTextPrice": 4.20,
+		"specifications":[{"id": 2, "name": "size", "values": ["S", "M", "L"]}],
+		"directions": [{
+			"id": 5,
+			"type": 1, 
+			"des": "正面",
+			"printingArea": {"x": 126, "y": 90, "width": 138, "height": 228},
+			"blocks": [{
+				"id": 5,
+				"orderNo": 1,
+				"groupId": 1,
+				"colors": [{
+					"color": "aeaeae",
+					"des": "灰色"
+				}, {
+					"color": "ff0000",
+					"des": "红色"
+				}]
+			}, {
+				"id": 6,
+				"orderNo": 2,
+				"groupId": 2,
+				"colors": [{
+					"color": "aeaeae",
+					"des": "灰色"
+				}, {
+					"color": "ff0000",
+					"des": "红色"
+				}]
+			}]
+		}, {
+			"id": 6,
+			"type": 2, 
+			"des": "反面",
+			"printingArea": {"x": 126, "y": 90, "width": 138, "height": 228},
+			"blocks": [{
+				"id": 7,
+				"orderNo": 1,
+				"groupId": 1,
+				"colors": [{
+					"color": "aeaeae",
+					"des": "灰色"
+				}, {
+					"color": "ff0000",
+					"des": "红色"
+				}]
+			}, {
+				"id": 8,
+				"orderNo": 2,
+				"groupId": 2,
+				"colors": [{
+					"color": "aeaeae",
+					"des": "灰色"
+				}, {
+					"color": "ff0000",
+					"des": "红色"
+				}]
+			}]
+		}, {
+			"id": 7,
+			"type": 3, 
+			"des": "左侧面",
+			"printingArea": {"x": 145, "y": 186, "width": 108, "height": 150},
+			"blocks": [{
+				"id": 9,
+				"orderNo": 1,
+				"groupId": 1,
+				"colors": [{
+					"color": "aeaeae",
+					"des": "灰色"
+				}, {
+					"color": "ff0000",
+					"des": "红色"
+				}]
+			}, {
+				"id": 10,
+				"orderNo": 2,
+				"groupId": 2,
+				"colors": [{
+					"color": "aeaeae",
+					"des": "灰色"
+				}, {
+					"color": "ff0000",
+					"des": "红色"
+				}]
+			}]
+		}, {
+			"id": 8,
+			"type": 4, 
+			"des": "右侧面",
+			"printingArea": {"x": 146, "y": 186, "width": 108, "height": 150},
+			"blocks": [{
+				"id": 11,
+				"orderNo": 1,
+				"groupId": 1,
+				"colors": [{
+					"color": "aeaeae",
+					"des": "灰色"
+				}, {
+					"color": "ff0000",
+					"des": "红色"
+				}]
+			}, {
+				"id": 12,
+				"orderNo": 2,
+				"groupId": 2,
+				"colors": [{
+					"color": "aeaeae",
+					"des": "灰色"
+				}, {
+					"color": "ff0000",
+					"des": "红色"
+				}]
+			}]
+		}]
+	}
+}

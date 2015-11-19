@@ -1,0 +1,44 @@
+{
+	"code": "0",
+	"msg": "",
+	"data": {
+		"total": 10,
+		"rows": [{
+			"id": 1,
+			"type": 1,
+			"properties": {
+				"title": "aaa",
+				"des": "aaa",
+				"price": 10.00,
+				"designer": "admin",
+				"src": "/upload/design/201312310002.svg?",
+				"defaultWidth": 400,
+				"defaultHeight": 400
+			}
+		}, {
+			"id": 2,
+			"type": 2,
+			"properties": {
+				"title": "bbb",
+				"des": "bbb",
+				"price": 15.00,
+				"designer": "admin",
+				"src": "/upload/design/201312310001.png",	
+				"defaultWidth": 400,
+				"defaultHeight": 400
+			}
+		}, {
+			"id": 3,
+			"type": 1,
+			"properties": {
+				"title": "ccc",
+				"des": "ccc",
+				"price": 20.00,
+				"designer": "admin",
+				"src": "/upload/design/201312310003.svg",
+				"defaultWidth": 193,
+				"defaultHeight": 350
+			}
+		}]
+	}
+}

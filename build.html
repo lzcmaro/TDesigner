@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Designer</title>
+
+	<link type="text/css" rel="stylesheet" href="js/ext/jquery-ui-1.8.23/jquery-ui-1.8.23.custom.css"/>
+	<link type="text/css" rel="stylesheet" href="js/ext/jquery-ui-rotate/jquery.ui.rotate.css"/>
+	<link type="text/css" rel="stylesheet" href="js/ext/jquery-filterselector/jquery.filterselector.css?201402270117"/>
+	<link type="text/css" rel="stylesheet" href="js/ext/fileuploader/fileuploader.min.css"/>
+	<link type="text/css" rel="stylesheet" href="css/fontello.css"/>
+	<link type="text/css" rel="stylesheet" href="css/style.css?201402271454"/>
+
+	<script src="js/ext/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<script src="js/ext/jquery-ui-1.8.23/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
+	<script src="js/ext/jquery-ui-rotate/jquery.ui.rotate.js" type="text/javascript"></script>
+	<script src="js/ext/jquery-filterselector/jquery.filterselector.min.js" type="text/javascript"></script>
+	<script src="js/ext/underscore.min.js" type="text/javascript"></script>
+	<script src="js/ext/backbone.min.js" type="text/javascript"></script>
+	<script src="js/ext/tiny_mce/tiny_mce.js"></script>
+	<script src="js/ext/fileuploader/fileuploader.min.js"></script>
+   	
+    <script src="js/modules/i18n.js" type="text/javascript"></script>
+			<script src="js/modules/helper.js" type="text/javascript"></script>
+			<script src="js/modules/widget.js" type="text/javascript"></script>
+			<script src="js/modules/property.js" type="text/javascript"></script>
+			<script src="js/modules/design.js" type="text/javascript"></script>
+			<script src="js/modules/product.js" type="text/javascript"></script>
+			<script src="js/modules/userview.js" type="text/javascript"></script>
+			<script src="js/modules/builder.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+	 	//if( Logger ){ Logger.DEBUG = false; }
+		
+		jQuery(function($){			
+			builder = new Builder();
+			builder.bind("inited", function(){
+				builder.loadApp()
+			})
+			builder.render()
+		})
+	</script>
+	
+</head>
+<body>
+
+	<div class="page">
+		<div id="header" class="header">		
+			<ul id="nav-container" class="left nav-container">
+				<li>
+					<a class="btn choose-product active" href="javascript:;">
+ 						<span class="icon"></span>
+ 						<span>Choose product</span>
+ 					</a>
+				</li>
+				<li>
+					<a class="btn choose-design" href="javascript:;">
+ 						<span class="icon"></span>
+ 						<span>Choose design</span>
+ 					</a>
+				</li>				
+				<li>
+					<a class="btn add-text" href="javascript:;">
+ 						<span class="icon"></span>
+ 						<span>Add text</span>
+ 					</a>
+				</li>
+				<!--<li>
+					<a class="btn new" href="javascript:;">
+ 						<span class="icon"></span>
+ 						<span>New</span>
+ 					</a>
+				</li>
+				-->
+				<li>
+					<a class="btn upload-photo" href="javascript:;">
+ 						<span class="icon"></span>
+ 						<span>Upload photo</span>
+ 					</a>
+				</li>
+			</ul>
+		</div>
+		<div id="main" class="main">
+
+			<div id="product-listview" class="box listview product-listview">
+				<div class="box-header">
+					<span class="box-title">Choose a product</span>
+					<a href="javascript:;" class="box-close"><i class="icon-cancel-circled"></i></a>
+				</div>
+				<div class="selector-container">
+					<select class="category"></select>
+					<select class="sub-category"></select>
+				</div>
+				<div class="list-container">
+					<!-- template -->
+				</div>
+				<div id="product-listview-pagination" class="pagination-container"></div>
+			</div>
+
+			<div id="design-listview" class="box listview design-listview">
+				<div class="box-header">
+					<span class="box-title">Choose a design</span>
+					<a href="javascript:;" class="box-close"><i class="icon-cancel-circled"></i></a>
+				</div>
+				<div class="selector-container">
+					<select class="category"></select>
+					<select class="sub-category"></select>
+				</div>
+				<div class="list-container"></div>
+				<div id="design-listview-pagination" class="pagination-container"></div>
+			</div>
+
+			<div id="preview" class="box preview">
+				<!-- template -->
+			</div>
+
+			<div id="upload-view" class="box listview upload-view">
+				<div class="box-header">
+					<span class="box-title">Upload a photo</span>
+					<a href="javascript:;" class="box-close"><i class="icon-cancel-circled"></i></a>
+				</div>
+				<div class="selector-container"><p>I have the rights to use these images.</p><div class="uploader"></div></div>
+				<div class="list-container"></div>
+			</div>
+
+
+
+			<div id="device">
+
+				<div id="product-viewer" class="product-viewer">
+					<canvas id="canvas" width="400" height="400" style="width:400px; height:400px;">
+						<p>Your browser does not support the HTML5 canvas,Please use the <a href="http://www.google.com/intl/en-US/chrome/browser/" target="_brank">google chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_brank">firefox</a>.</p>
+					</canvas>
+				</div>
+
+				<div id="printing-area" class="printing-area hidden"></div>
+
+			</div>
+
+
+			<div id="design-property-view" class="hidden">
+
+				<div id="design-property-dialog" class="box design-property-dialog">
+					<div id="property-list" class="list property-list">
+						<!-- template -->
+					</div>
+					<div class="">
+						<a href="javascript:;" class="btn btnCenterHorizontally" title="Center design horizontally"><i class="icon-narrow"></i></a>
+						<a href="javascript:;" class="btn btnCenterVertically" title="Center design vertically"><i class="icon-narrow"></i></a>
+					</div>
+					<div class="split-line"></div>
+					<div class="">
+						<a href="javascript:;" class="btn btnFlipHorizontally" title="Flip horizontally"><i class="icon-flip2"></i></a>
+						<a href="javascript:;" class="btn btnFlipVertically" title="Flip vertically"><i class="icon-flip"></i></a>
+					</div>
+				</div>
+
+				<div id="design-color-settings" class="box settings design-color-settings hidden">
+					<div class="box-header">
+						<span class="box-title">Color settings</span>
+						<a href="javascript:;" class="box-close"><i class="icon-cancel-circled"></i></a>
+					</div>
+					<div class="list-container">
+						<!-- template -->
+					</div>
+				</div>
+
+				<div id="design-text-settings" class="box settings design-text-settings hidden">
+					<div class="box-header">
+						<span class="box-title">Text settings</span>
+						<a href="javascript:;" class="box-close"><i class="icon-cancel-circled"></i></a>
+					</div>
+					<div class="editor-container">
+						<!-- template -->
+						
+					</div>
+				</div>
+
+			</div>	
+
+				
+
+			<div id="direction-list-container" class="list direction-list"></div>
+			<div id="block-list-container" class="list block-list hidden"></div>
+			<div id="color-list-container" class="list color-list direction-color-list"></div>
+			
+		</div>
+
+
+		<div id="footer" class="footer">
+			
+			<div class="right">
+				<div class="left product-specifications"><!-- template --></div>
+				<div class="left product-quantity">quantity: <input id="product-quantity" value="1" maxLength="4"/></div>
+				<div class="left price-container"><span id="order-price" class="order-price">0.00</span><span id="">$</span></div>
+				<a href="javascript:;" id="btnAddToBasket" class="left btn btnAddToBasket">Add to basket</a>
+			</div>
+			
+		</div>
+	</div>
+
+
+	<script id="template-list-product" type="template">
+		<ul class="list">
+		<% _.each(rows, function(o) { %>
+			
+			<li pid="<%=o.id%>" category="<%=o.category%>">
+				
+				<% _.each(o.directions[0].blockImages, function(imgPath){ %>
+
+					<img src="<%=imgPath%>"/>
+
+				<% }); %>
+			
+			</li>
+		
+		<% }); %>
+		</ul>
+	</script>
+
+	<script id="template-list-design" type="template">
+		<ul class="list">
+		<% _.each(rows, function(o) { %>
+			
+			<li pid="<%=o.id%>">
+
+			<% if(o.properties.defaultWidth == o.properties.defaultHeight){ %>
+				<img src="<%=o.properties.src%>" style="width:40px; height:40px;">
+			<% }else if(o.properties.defaultWidth > o.properties.defaultHeight){ %>
+				<img src="<%=o.properties.src%>" style="width:40px; height:<%=o.properties.defaultHeight / o.properties.defaultWidth * 40%>px; margin-top:<%=(1 - o.properties.defaultHeight / o.properties.defaultWidth) * 40 / 2%>px;">
+			<% }else{ %>
+				<img src="<%=o.properties.src%>" style="width:<%=o.properties.defaultWidth / o.properties.defaultHeight * 40%>px; height:40px; margin-left:<%=(1 - o.properties.defaultWidth / o.properties.defaultHeight) * 40 / 2%>px;">
+			<% }; %>
+			
+			</li>
+		
+		<% }); %>
+		</ul>
+	</script>
+
+	<script id="template-pagination" type="template">
+		<div class="pagebar">
+			<a class="page-previous <%if(!hasBefore){%>disabled<%}%>" href="javascript:;">
+				<i class="icon-left-dir-2"></i>
+				<span class="text">previous</span>
+			</a>
+			<span class="page-number"><%=currentPage%>/<%=totalPage%></span>
+			<a class="page-next <%if(!hasNext){%>disabled<%}%>" href="javascript:;">
+				<span class="text">next</span>
+				<i class="icon-right-dir-2"></i>
+			</a>
+		</div>
+	</script>
+
+	<script id="template-product-preview" type="template">
+		<p class="name"><%=name%></p>
+		<div class="image-container">
+			<% _.each(directions, function(o){ %>
+			
+			<div <%if(o.type === 1){%> class="main" <%};%>>
+
+				<% _.each(o.blockImages, function(imgPath){ %>
+				<img src="<%=imgPath%>">
+				<% }); %>
+
+			</div>			
+			
+			<% }); %>
+		</div>		
+		<div class="list color-list">
+			<% if(type === 1){ %>
+			<ul>
+				<% _.each(directions[0].blocks[0].colors, function(o){ %>
+				<li style="background: #<%=o.color%>"></li>
+				<% }); %>
+			</ul>
+			<% }; %>
+		</div>	
+		<p class="description"><%=des%></p>
+		<p class="price"><%=price.toFixed(2)%>$</p>
+	</script>
+
+	<script id="template-design-preview" type="template">
+		<p class="name"><%=properties.title%></p>
+		<div class="image-container">
+
+			<% if(properties.defaultWidth == properties.defaultHeight){ %>
+				<img src="<%=properties.src%>" style="width:150px; height:150px;">
+			<% }else if(properties.defaultWidth > properties.defaultHeight){ %>
+				<img src="<%=properties.src%>" style="width:150px; height:<%=properties.defaultHeight / properties.defaultWidth * 150%>px; margin-top:<%=(1 - properties.defaultHeight / properties.defaultWidth) * 150 / 2%>px;">
+			<% }else{ %>
+				<img src="<%=properties.src%>" style="width:<%=properties.defaultWidth / properties.defaultHeight * 150%>px; height:150px; margin-left:<%=(1 - properties.defaultWidth / properties.defaultHeight) * 150 / 2%>px;">
+			<% }; %>
+			
+		</div>
+		<p class="designer">designed by <%=properties.designer%></p>
+		<p class="description"><%=properties.des%></p>
+		<p class="price">from <%=properties.price.toFixed(2)%>$</p>
+	</script>
+
+	<script id="template-viewer-direction" type="template">
+		<ul>
+		<% _.each(renderData, function(o, index){ %>
+
+			<li <%if(o.selected){%> class="selected"<%};%> val="<%=o.type%>" title="<%=o.des%>">
+
+				<% _.each(o.blockImages, function(imgPath){ %>
+
+					<img src="<%=imgPath%>"/>
+
+				<% }); %>
+
+			</li>
+
+		<% }); %>
+		</ul>
+	</script>
+
+	<script id="template-viewer-block" type="template">
+		<ul>
+		<% _.each(renderData, function(o, index){ %>
+
+			<li <%if(o.selected){%> class="selected"<%};%> val="<%=o.orderNo%>"><img src="<%=o.imgPath%>"/></li>
+
+		<% }); %>
+		</ul>
+	</script>
+
+	<script id="template-viewer-color" type="template">
+		<ul>
+		<% _.each(renderData, function(o){ %>
+
+			<li <%if(o.selected){%>class="selected"<%};%> style="background: #<%=o.color%>" title="<%=o.des%>" val="<%=o.color%>"></li>
+		
+		<% }); %>
+		</ul>
+	</script>
+
+	<script id="template-widget-nullwidget" type="template">
+		<div></div>
+	</script>
+
+	<script id="template-widget-colorwidget" type="template">
+		<ul>
+		<% _.each(items, function(o){ %>
+
+			<li class="<%if(o.selected){%>selected<%};%>" title="<%=o.color%>" data-val="<%=o.color%>" data-type="<%=o.type%>">
+				<i class="icon-left-dir-1"></i>
+				<span class="color" style="background: <%=o.color%>"></span>
+			</li>
+		
+		<% }); %>
+		</ul>
+	</script>
+
+	<script id="template-color-settings-item" type="template">
+		<ul class="list color-list">
+		<% _.each(colors, function(o){ %>
+			<li style="background: <%=o%>" data-val="<%=o%>"></li>
+		<% }); %>
+		</ul>
+	</script>
+
+	<script id="template-widget-editorwidget" type="template">
+		<ul>
+			<li class="selected" data-type="text">
+				<i class="icon-left-dir-1"></i>
+				<i class="icon-font-3"></i>
+			</li>
+		</ul>
+	</script>
+
+	<script id="template-editor" type="template">
+		<textarea id="<%=__wid%>"><%=text%></textarea>
+	</script>
+
+</body>
+</html>

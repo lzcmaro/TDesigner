@@ -1,0 +1,32 @@
+
+.ui-rotate{
+	position: relative;
+}
+.ui-rotate-handle {
+    display: block;
+    width: 12px;
+  	height: 12px;   
+    position: absolute;
+  	font-size: 0.1px;
+  	cursor: pointer;
+}
+.ui-rotate-ne {
+    right: -6px;
+    top: -6px;
+    background-position: -131px -66px;  
+}
+.ui-rotate-se {
+    bottom: -6px;
+    right: -6px;
+    background-position: -146px -66px;
+}
+.ui-rotate-sw {
+    bottom: -6px;
+    left: -6px;
+    background-position: -161px -66px;
+}
+.ui-rotate-nw {
+    top: -6px;
+    left: -6px;
+    background-position: -176px -66px;
+}

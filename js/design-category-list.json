@@ -1,0 +1,24 @@
+
+{
+	"code": "0",
+	"msg": "",
+	"data": [{
+		"id": 1,
+		"name": "Bestseller"
+	}, {
+		"id": 2,
+		"name": "Funny"
+	}, {
+		"id": 3,
+		"name": "Geek"
+	}, {
+		"id": 4,
+		"name": "Occastions"
+	}, {
+		"id": 5,
+		"name": "Sports"
+	}, {
+		"id": 6,
+		"name": "Music"
+	}]
+}

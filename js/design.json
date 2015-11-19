@@ -1,0 +1,17 @@
+{
+	"code": 0,
+	"msg": "",
+	"data": {
+		"id": 3,
+		"type": 1,
+		"properties": {
+			"title": "ccc",
+			"des": "ccc",
+			"price": 20.00,
+			"designer": "admin",
+			"src": "/designer/upload/design/201312310003.svg",
+			"defaultWidth": 193,
+			"defaultHeight": 350
+		}
+	}
+}

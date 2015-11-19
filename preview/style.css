@@ -1,0 +1,100 @@
+html, body{width: 100%; height: 100%; overflow: hidden;}
+body{font-family: Helvetica,Arial,sans-serif; font-size: 12px; background: #ebebeb;}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td{margin: 0; padding: 0;}
+ul, li{list-style: none outside none;}
+a{color: #525252; text-decoration: none;}
+a:hover, a:active{outline: 0 none;}
+
+.clearfix{display: block;}
+.clearfix:after{clear: both; content: ""; display: block; height: 0; visibility: hidden;}
+
+.left{float: left;}
+.right{float: right;}
+.hidden{display: none;}
+
+.list{}
+.list li{
+	float: left;
+	display: block;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+	position: relative;
+	cursor: pointer;
+	margin: 1px 2px;
+}
+.list li.selected{
+	margin: 0 1px;
+	border: 2px solid #1fa59a;
+}
+
+.page{
+	width: 100%; 
+	height: 100%; 
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-user-select:none;
+	color:#6c6c6c;
+	/*position: absolute;*/
+	overflow: auto;
+}
+
+
+.device{width:400px; height: 400px;}
+.device.tile{width: 800px; height: 800px; margin: 10px 0;}
+.viewer{
+	width: 400px;
+	height: 400px;
+	overflow: hidden;
+	position: relative;
+	float: left;
+	display: none;
+}
+.viewer .design{
+	position: absolute;
+}
+.viewer .design-text .wapper{
+	color: #000000;
+    text-align: center;
+    word-break: break-all;
+}
+
+.product-viewer{
+	width: 400px;
+	height: 400px;
+	position: relative;
+}
+.product-viewer img{
+	position: absolute;
+}
+.product-viewer img.product{
+	width: 400px;
+	height: 400px;
+}
+
+
+.direction-list{
+	margin: 10px 0 0 103px;
+}
+.direction-list li{
+	border-radius: 5px;
+	width: 40px;
+	height: 40px;
+}
+.direction-list li img{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+}
+
+
+.printing-area{
+	position: absolute;
+	z-index: 1;
+	border: 1px solid #999;
+}
+
+
+
+
+

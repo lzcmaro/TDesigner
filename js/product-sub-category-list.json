@@ -1,0 +1,18 @@
+
+{
+	"code": "0",
+	"msg": "",
+	"data": [{
+		"id": 1,
+		"parentId": 0,
+		"name": "Men"
+	}, {
+		"id": 2,
+		"parentId": 0,
+		"name": "Women"
+	}, {
+		"id": 3,
+		"parentId": 0,
+		"name": "Kids & Babies"
+	}]
+}
